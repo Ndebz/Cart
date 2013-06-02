@@ -38,7 +38,8 @@
         <h1>Que's Book Store</h1>
         <div id="products-holder">
         <%
-           ArrayList<Product> products = (ArrayList)session.getAttribute("productslist");
+           //get catalog products
+           ArrayList<Product> products = Catalog.getInstance().getCatalog();
             NumberFormat currency = NumberFormat.getCurrencyInstance();
             
             for(int i = 0;i < products.size();i++){

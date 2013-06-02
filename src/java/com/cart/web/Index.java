@@ -6,6 +6,7 @@ package com.cart.web;
 
 import com.cart.model.Cart;
 import com.cart.model.CartItem;
+import com.cart.model.Catalog;
 import com.cart.model.Product;
 import com.cart.model.ProductsLoad;
 import java.io.IOException;
@@ -44,13 +45,9 @@ public class Index extends HttpServlet {
              session.setAttribute("cart",cart);
             }
         
-        ArrayList<Product> load  = (ArrayList<Product>)session.getAttribute("productslist");
-        if (load != null) {
-             
-         } else {
-            load = new ProductsLoad().getProductslist();
-            session.setAttribute("productslist", load);
-        }
+        new ProductsLoad();
+        
+        
       
         RequestDispatcher view = request.getRequestDispatcher("index.jsp");
         view.forward(request, response);
@@ -58,13 +55,5 @@ public class Index extends HttpServlet {
 
   
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    
 }
