@@ -12,8 +12,9 @@ public class Catalog {
     private ArrayList<Product> products;
     
     private Catalog(){
+       
+        products = new ProductsLoad().getProductslist();
         
-        products = new ArrayList<Product>();
     }
     
     //returns instance of catalog

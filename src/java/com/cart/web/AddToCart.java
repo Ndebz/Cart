@@ -6,6 +6,7 @@ package com.cart.web;
 
 import com.cart.model.Cart;
 import com.cart.model.CartItem;
+import com.cart.model.Catalog;
 import com.cart.model.Product;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +31,8 @@ public class AddToCart extends HttpServlet {
         int amount = Integer.parseInt((String)request.getParameter("amount"));
         
         HttpSession session = request.getSession(true);
-        ArrayList<Product> list = (ArrayList<Product>)session.getAttribute("productslist");
+        Catalog catalog = Catalog.getInstance();
+        ArrayList<Product> list = catalog.getCatalog();
         CartItem cartitem = new CartItem();
         Cart cart =  (Cart)session.getAttribute("cart");
        

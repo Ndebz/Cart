@@ -45,7 +45,7 @@ public class Index extends HttpServlet {
              session.setAttribute("cart",cart);
             }
         
-        new ProductsLoad();
+        
         
         
       

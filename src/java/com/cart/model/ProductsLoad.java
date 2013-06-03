@@ -25,13 +25,13 @@ public class ProductsLoad {
         p1.setProductName("HeadFirst Java");
         p1.setProductDescription("Beginner Book");
         p1.setProductPrice(20.00);
-        Catalog.getInstance().addProduct(p1);
+        productslist.add(p1);
         
         p2.setProductID(2);
         p2.setProductName("SCJP");
         p2.setProductDescription("Professionals Book");
         p2.setProductPrice(30.00);
-        Catalog.getInstance().addProduct(p2);
+        productslist.add(p2);
     }
 
     public ArrayList<Product> getProductslist() {
